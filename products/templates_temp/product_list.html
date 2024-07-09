@@ -1,0 +1,55 @@
+<html>
+    <body>
+        <!-- this is products list:
+        <br>
+        name:{{ name }}
+        <br>
+        address: {{ address }},
+        <br>
+        phone : {{ phone }}
+        <br>
+
+        object:
+        id:  {{ object.id }}
+        name: {{ object.name }}
+        price: {{ object.price }} <br>
+        cover_file:<img src="{{ object.cover_file.url  }}" >
+        <br>
+        create_at: {{ object.created_at }}
+
+
+        <br>
+        object list:<br> -->
+
+        {% for pro_obj in product_list %}
+          product_id: {{ pro_obj.id }} <br>
+          product_cat:  {{pro_obj.product_category }} <br>
+          product_name: {{pro_obj.name }}, <br>
+
+        {% endfor %}
+
+
+        <h2>Contact Us</h2>
+    <form action="{% url 'product_create' %}" method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="product_category">Choose a category:</label>
+        <select id="product_category" name="product_category">
+            {% for cat in categories %}
+            <option value="{{ cat.id }}">{{cat.name}}</option>
+            
+            {% endfor %}
+        </select>
+
+        <label for="text">price:</label>
+        <input type="text" id="text" name="price" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    </body>
+</html>

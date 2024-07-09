@@ -1,0 +1,24 @@
+{% load crispy_forms_tags %}
+<html>
+
+<head>
+    <title>category list</title>
+</head>
+    <body>
+       <div style="width: 50%" >
+
+        <h2> category detail</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form | crispy }}
+            </div>
+            <div class="form-group">
+                <button type="submit">Update</button>
+            </div>
+        </form>
+        </div>
+
+      
+    </body>
+</html>

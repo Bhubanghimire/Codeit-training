@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>category list</title>
+</head>
+    <body>
+       <div style="width: 50%" >
+
+        <h2> category list</h2>
+        
+        <table>
+            <tr>
+                <th>S.N</th>
+                <th>Name</th>
+                <th> products count </th>
+                <th>Description</th>
+                <th>create at</th>
+                <th> Action </th>
+            </tr>
+            {% for cat in object_list %}
+            <tr>
+                <td> {{ forloop.counter }} </td>
+                <td> {{ cat.name }} </td> 
+                <td> {{ cat.product_count}} </td>
+                <td> {{cat.description}} </td>
+                <td> {{cat.create_at}} </td>
+                <td> <a href="{% url 'category_detail' cat.pk %}">details</a>| 
+                    <a href="{% url 'category_update' cat.pk %}">Update</a> | 
+                    
+                    <a href="{% url 'category_delete' cat.pk %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+        <h2> product list</h2>
+        
+            {{total_objects}}
+
+    </body>
+</html>

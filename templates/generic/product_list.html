@@ -1,0 +1,10 @@
+{% extends '../base.html' %}
+
+{% block content %}
+{% for pro_obj in product_list %}
+          product_id: {{ pro_obj.id }} <br>
+          product_cat:  {{pro_obj.product_category }} <br>
+          product_name: {{pro_obj.name }}, <br>
+
+        {% endfor %}
+{% endblock %}

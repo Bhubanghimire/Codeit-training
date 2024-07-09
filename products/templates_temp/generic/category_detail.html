@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <title>category list</title>
+</head>
+    <body>
+       <div style="width: 50%" >
+
+        <h2> category detail</h2>
+            name: {{ object.name }} <br>
+            description: {{ object.description }}  <br>
+            product count: 20  <br>
+            create_at: {{ object.create_at }}  <br>
+        </div>
+
+        <a href="{% url 'category_list' %}">Home </a>
+    </body>
+</html>
