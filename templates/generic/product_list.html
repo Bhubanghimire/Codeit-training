@@ -1,5 +1,9 @@
 {% extends '../base.html' %}
 
+{% block navbar %}
+<li><a href="{% url 'login' %}">nav update</a></li>
+{% endblock navbar %}
+
 {% block content %}
 {% for pro_obj in product_list %}
           product_id: {{ pro_obj.id }} <br>
@@ -7,4 +11,6 @@
           product_name: {{pro_obj.name }}, <br>
 
         {% endfor %}
+
+        {% include './include.html' %}
 {% endblock %}

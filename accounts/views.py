@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def home(request):
     # if not request.user.is_authenticated:
-    #     return redirect('login')
+        # return redirect('login')
 
     print(request.user, request.user.is_authenticated)
     return render(request, 'base.html')
